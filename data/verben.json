@@ -1,1 +1,19 @@
 
+[
+  {
+    "verb": "ir",
+    "translation": "gehen",
+    "tenses": {
+      "presente": [
+        { "person": "yo", "solution": "voy" },
+        { "person": "tú", "solution": "vas" },
+        { "person": "él/ella", "solution": "va" },
+        { "person": "nosotros/as", "solution": "vamos" },
+        { "person": "vosotros/as", "solution": "vais" },
+        { "person": "ellos/as", "solution": "van" }
+      ],
+      "preterito": [],
+      "futuro": []
+    }
+  }
+]
