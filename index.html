@@ -20,6 +20,11 @@
   padding: 16px;
 }
 
+#modeButton {
+  background: #e0e0e0;
+  color: #333;
+}
+
 .card {
   background: white;
   padding: 24px;
@@ -90,6 +95,9 @@ button {
   onkeydown="if(event.key === 'Enter') checkAnswer();"
 />
 
+<button id="modeButton" onclick="toggleMode()">
+  Modus: Ein Verb komplett
+</button>
 
   <button onclick="checkAnswer()">Antwort prüfen</button>
 
@@ -97,182 +105,102 @@ button {
 </div>
 
 <script>
-const verbs = [
+let verbs = [];
 
-  {
-    verb: "ir",
-    translation: "gehen",
-    forms: [
-      { person: "yo", solution: "voy" },
-      { person: "tú", solution: "vas" },
-      { person: "él/ella", solution: "va" },
-      { person: "nosotros/as", solution: "vamos" },
-      { person: "vosotros/as", solution: "vais" },
-      { person: "ellos/as", solution: "van" }
-    ]
-  },
-
-  {
-    verb: "hacer",
-    translation: "machen",
-    forms: [
-      { person: "yo", solution: "hago" },
-      { person: "tú", solution: "haces" },
-      { person: "él/ella", solution: "hace" },
-      { person: "nosotros/as", solution: "hacemos" },
-      { person: "vosotros/as", solution: "hacéis" },
-      { person: "ellos/as", solution: "hacen" }
-    ]
-  },
-
-  {
-    verb: "tener",
-    translation: "haben",
-    forms: [
-      { person: "yo", solution: "tengo" },
-      { person: "tú", solution: "tienes" },
-      { person: "él/ella", solution: "tiene" },
-      { person: "nosotros/as", solution: "tenemos" },
-      { person: "vosotros/as", solution: "tenéis" },
-      { person: "ellos/as", solution: "tienen" }
-    ]
-  },
-
-  {
-    verb: "ser",
-    translation: "sein",
-    forms: [
-      { person: "yo", solution: "soy" },
-      { person: "tú", solution: "eres" },
-      { person: "él/ella", solution: "es" },
-      { person: "nosotros/as", solution: "somos" },
-      { person: "vosotros/as", solution: "sois" },
-      { person: "ellos/as", solution: "son" }
-    ]
-  },
-
-  {
-    verb: "estar",
-    translation: "sein (Zustand)",
-    forms: [
-      { person: "yo", solution: "estoy" },
-      { person: "tú", solution: "estás" },
-      { person: "él/ella", solution: "está" },
-      { person: "nosotros/as", solution: "estamos" },
-      { person: "vosotros/as", solution: "estáis" },
-      { person: "ellos/as", solution: "están" }
-    ]
-  },
-
-  {
-    verb: "hablar",
-    translation: "sprechen",
-    forms: [
-      { person: "yo", solution: "hablo" },
-      { person: "tú", solution: "hablas" },
-      { person: "él/ella", solution: "habla" },
-      { person: "nosotros/as", solution: "hablamos" },
-      { person: "vosotros/as", solution: "habláis" },
-      { person: "ellos/as", solution: "hablan" }
-    ]
-  },
-
-  {
-    verb: "poder",
-    translation: "können",
-    forms: [
-      { person: "yo", solution: "puedo" },
-      { person: "tú", solution: "puedes" },
-      { person: "él/ella", solution: "puede" },
-      { person: "nosotros/as", solution: "podemos" },
-      { person: "vosotros/as", solution: "podéis" },
-      { person: "ellos/as", solution: "pueden" }
-    ]
-  },
-
-  {
-    verb: "ver",
-    translation: "sehen",
-    forms: [
-      { person: "yo", solution: "veo" },
-      { person: "tú", solution: "ves" },
-      { person: "él/ella", solution: "ve" },
-      { person: "nosotros/as", solution: "vemos" },
-      { person: "vosotros/as", solution: "veis" },
-      { person: "ellos/as", solution: "ven" }
-    ]
-  },
-
-  {
-    verb: "reírse",
-    translation: "lachen",
-    forms: [
-      { person: "yo", solution: "me río" },
-      { person: "tú", solution: "te ríes" },
-      { person: "él/ella", solution: "se ríe" },
-      { person: "nosotros/as", solution: "nos reímos" },
-      { person: "vosotros/as", solution: "os reís" },
-      { person: "ellos/as", solution: "se ríen" }
-    ]
-  },
-
-  {
-    verb: "perder",
-    translation: "verlieren",
-    forms: [
-      { person: "yo", solution: "pierdo" },
-      { person: "tú", solution: "pierdes" },
-      { person: "él/ella", solution: "pierde" },
-      { person: "nosotros/as", solution: "perdemos" },
-      { person: "vosotros/as", solution: "perdéis" },
-      { person: "ellos/as", solution: "pierden" }
-    ]
-  },
-
-  {
-    verb: "cantar",
-    translation: "singen",
-    forms: [
-      { person: "yo", solution: "canto" },
-      { person: "tú", solution: "cantas" },
-      { person: "él/ella", solution: "canta" },
-      { person: "nosotros/as", solution: "cantamos" },
-      { person: "vosotros/as", solution: "cantáis" },
-      { person: "ellos/as", solution: "cantan" }
-    ]
-  },
-
-  {
-    verb: "llorar",
-    translation: "weinen",
-    forms: [
-      { person: "yo", solution: "lloro" },
-      { person: "tú", solution: "lloras" },
-      { person: "él/ella", solution: "llora" },
-      { person: "nosotros/as", solution: "lloramos" },
-      { person: "vosotros/as", solution: "lloráis" },
-      { person: "ellos/as", solution: "lloran" }
-    ]
-  }
-
-];
+let activeTense = "presente";
+ 
+const tenseLabels = {
+  presente: "Gegenwart",
+  preterito: "Vergangenheit",
+  futuro: "Zukunft"
+};
 
 let currentVerb;
+
 let currentForm;
 
-function nextVocab() {
-  // Zufälliges Verb
-  currentVerb = verbs[Math.floor(Math.random() * verbs.length)];
+let mode = "singleVerb";
+// mögliche Werte: "random", "singleVerb"
 
-  // Zufällige Person dieses Verbs
-  currentForm = currentVerb.forms[Math.floor(Math.random() * currentVerb.forms.length)];
+let currentVerbIndex = 0;
+let currentFormIndex = 0;
+
+
+function getURLParams() {
+  const params = new URLSearchParams(window.location.search);
+  return {
+    set: params.get("set") || "verben",
+    tense: params.get("tense") || "presente"
+  };
+}
+
+async function loadVerbs() {
+  const { set, tense } = getURLParams();
+  activeTense = tense;
+  document.title = `Spanisch – ${tenseLabels[activeTense] || activeTense}`;
+  const filePath = `data/${set}.json`;
+
+  try {
+    const response = await fetch(filePath);
+    if (!response.ok) {
+      throw new Error("JSON-Datei nicht gefunden");
+    }
+
+    const data = await response.json();
+
+    verbs = data
+      .filter(v => v.tenses && v.tenses[tense])
+      .map(v => ({
+        verb: v.verb,
+        translation: v.translation,
+        forms: v.tenses[tense]
+      }))
+      .filter(v => v.forms.length > 0);
+
+    if (verbs.length === 0) {
+      alert(`Keine Vokabeln für Zeitform: ${tense}`);
+      return;
+    }
+
+    // Reset für Lernmodus
+    currentVerb = null;
+    currentVerbIndex = 0;
+    currentFormIndex = 0;
+
+    nextVocab();
+
+  } catch (error) {
+    console.error(error);
+    alert("Fehler beim Laden der Vokabeln");
+  }
+}
+
+function nextVocab() {
+
+  if (mode === "singleVerb") {
+
+    // Neues Verb wählen, wenn noch keins da ist
+    // oder alle Personen durch sind
+    if (!currentVerb || currentFormIndex >= currentVerb.forms.length) {
+      currentVerb = verbs[currentVerbIndex % verbs.length];
+      currentVerbIndex++;
+      currentFormIndex = 0;
+    }
+
+    currentForm = currentVerb.forms[currentFormIndex];
+
+  } else {
+    // Zufallsmodus (optional, später nutzbar)
+    currentVerb = verbs[Math.floor(Math.random() * verbs.length)];
+    currentForm = currentVerb.forms[Math.floor(Math.random() * currentVerb.forms.length)];
+  }
 
   // Anzeige
   document.getElementById("question").textContent =
     `${currentVerb.verb} (${currentVerb.translation})`;
 
   document.getElementById("meta").textContent =
-    `Person: ${currentForm.person} (Präsens)`;
+    `Person: ${currentForm.person} (${tenseLabels[activeTense] || activeTense})`;
 
   document.getElementById("answer").value = "";
   document.getElementById("feedback").textContent = "";
@@ -286,7 +214,10 @@ function checkAnswer() {
   if (userAnswer.toLowerCase() === currentForm.solution.toLowerCase()) {
     document.getElementById("feedback").textContent = "✔ Richtig!";
     document.getElementById("feedback").className = "correct";
-    setTimeout(nextVocab, 700);
+
+    currentFormIndex++;   // 👉 nächste Person desselben Verbs
+    setTimeout(nextVocab, 500);
+
   } else {
     document.getElementById("feedback").textContent =
       `✘ Falsch. Richtig ist: ${currentForm.solution}`;
@@ -294,10 +225,39 @@ function checkAnswer() {
   }
 }
 
+function toggleMode() {
+  if (mode === "singleVerb") {
+    mode = "random";
+    document.getElementById("modeButton").textContent =
+      "Modus: Zufall";
+  } else {
+    mode = "singleVerb";
+    document.getElementById("modeButton").textContent =
+      "Modus: Ein Verb komplett";
+
+    // Reset für systematischen Modus
+    currentVerb = null;
+    currentFormIndex = 0;
+  }
+
+  
+if (verbs.length > 0) {
+  nextVocab();
+}
+
+}
+
 
 window.onload = function () {
-  nextVocab();
+  document.getElementById("modeButton").textContent =
+    mode === "singleVerb"
+      ? "Modus: Ein Verb komplett"
+      : "Modus: Zufall";
+
+  loadVerbs(); // ✅ WICHTIG: nicht nextVocab()
 };
+
+
 
 </script>
 <script>
