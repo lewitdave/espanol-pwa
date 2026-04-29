@@ -112,6 +112,12 @@ button {
   id="answer"
   placeholder="Konjugation eingeben"
   onkeydown="if(event.key === 'Enter') checkAnswer();"
+
+  autocapitalize="none"
+  autocorrect="off"
+  autocomplete="off"
+  spellcheck="false"
+  inputmode="text"
 />
 <div id="tenseButtons">
   <button onclick="setTense('presente')">Gegenwart</button>
