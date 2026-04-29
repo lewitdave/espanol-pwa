@@ -3,26 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#0078d4">
+  <meta name="theme-color" content="#0078d4">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Spanischer Verbtrainer – Präsens</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f6f8;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100svh;
+  padding: 16px;
+}
 
     .card {
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      width: 380px;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
 
     input {
       width: 100%;
@@ -60,6 +63,33 @@
       font-size: 14px;
       margin-bottom: 10px;
     }
+    #question {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.meta {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 14px;
+  font-size: 18px;
+  border-radius: 8px;
+}
+
+button {
+  padding: 14px;
+  font-size: 18px;
+  border-radius: 10px;
+}
+
+#feedback {
+  font-size: 18px;
+  margin-top: 16px;
+}
+
   </style>
 </head>
 <body>
