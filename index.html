@@ -79,6 +79,25 @@ button {
   color: red;
   font-weight: bold;
 }
+
+#tenseButtons {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+#tenseButtons button {
+  flex: 1;
+  background: #f0f0f0;
+  color: #333;
+  font-size: 14px;
+}
+
+#tenseButtons button.active {
+  background: #0078d4;
+  color: white;
+}
+
   </style>
 </head>
 <body>
@@ -94,6 +113,11 @@ button {
   placeholder="Konjugation eingeben"
   onkeydown="if(event.key === 'Enter') checkAnswer();"
 />
+<div id="tenseButtons">
+  <button onclick="setTense('presente')">Gegenwart</button>
+  <button onclick="setTense('preterito')">Vergangenheit</button>
+  <button onclick="setTense('futuro')">Zukunft</button>
+</div>
 
 <button id="modeButton" onclick="toggleMode()">
   Modus: Ein Verb komplett
@@ -247,6 +271,17 @@ if (verbs.length > 0) {
 
 }
 
+function setTense(tense) {
+  const params = new URLSearchParams(window.location.search);
+  params.set("tense", tense);
+
+  // Optional: Set beibehalten
+  if (!params.get("set")) {
+    params.set("set", "verben");
+  }
+
+  window.location.search = params.toString();
+}
 
 window.onload = function () {
   document.getElementById("modeButton").textContent =
