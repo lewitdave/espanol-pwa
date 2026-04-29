@@ -1,11 +1,27 @@
+const CACHE_NAME = "spanisch-trainer-v2";
+const FILES_TO_CACHE = [
+  "./",
+  "./index.html",
+  "./manifest.json",
+  "./data/verben.json"
+];
+
 self.addEventListener("install", event => {
   event.waitUntil(
-    caches.open("spanisch-trainer-v1").then(cache => {
-      return cache.addAll([
-        "./",
-        "./index.html",
-        "./manifest.json"
-      ]);
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.addAll(FILES_TO_CACHE);
+    })
+  );
+});
+
+self.addEventListener("activate", event => {
+  event.waitUntil(
+    caches.keys().then(keys => {
+      return Promise.all(
+        keys
+          .filter(key => key !== CACHE_NAME)
+          .map(key => caches.delete(key))
+      );
     })
   );
 });
