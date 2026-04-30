@@ -113,6 +113,73 @@ button {
   color: white;
 }
 
+/* Mini-Link unter dem Verb */
+#showTableBtn {
+  background: none;
+  border: none;
+  color: #777;
+  font-size: 13px;
+  margin-top: 4px;
+  padding: 0;
+  text-align: left;
+}
+
+#showTableBtn:hover {
+  text-decoration: underline;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: env(safe-area-inset-top);
+  z-index: 1000;
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+.overlayContent {
+  background: white;
+  width: 100%;
+  max-width: 480px;
+  margin-top: calc(env(safe-area-inset-top) + 40px);
+  padding: 20px;
+  border-radius: 16px;
+}
+
+.closeOverlay {
+  background: none;
+  border: none;
+  font-size: 20px;
+  float: right;
+}
+
+/* Tabelle */
+.verbTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.verbTable th,
+.verbTable td {
+  border: 1px solid #ddd;
+  padding: 6px;
+}
+
+/* Unregelmäßige Teile */
+.irregular {
+  color: #d00000;
+  font-weight: bold;
+}
+
   </style>
 </head>
 <body>
@@ -121,6 +188,9 @@ button {
   <div class="meta" id="meta"></div>
   <h2 id="question"></h2>
 
+  <button id="showTableBtn" onclick="openVerbTable()">
+  📋 Formen anzeigen
+</button>
   
 <input
   type="text"
@@ -193,11 +263,14 @@ async function loadVerbs() {
 
     verbs = data
       .filter(v => v.tenses && v.tenses[tense])
-      .map(v => ({
-        verb: v.verb,
-        translation: v.translation,
-        forms: v.tenses[tense]
-      }))
+      
+.map(v => ({
+  verb: v.verb,
+  translation: v.translation,
+  forms: v.tenses[tense],   // fürs Training
+  tenses: v.tenses          // ✅ fürs Overlay
+}))
+
       .filter(v => v.forms.length > 0);
 
     if (verbs.length === 0) {
@@ -220,6 +293,8 @@ async function loadVerbs() {
 
 function nextVocab() {
 
+  closeVerbTable();
+  
   if (mode === "singleVerb") {
 
     // Neues Verb wählen, wenn noch keins da ist
@@ -302,6 +377,57 @@ function setTense(tense) {
   window.location.search = params.toString();
 }
 
+function openVerbTable() {
+  if (!currentVerb) return;
+
+  const container = document.getElementById("verbTableContainer");
+  container.innerHTML = generateVerbTable(currentVerb);
+
+  document.getElementById("verbOverlay").classList.remove("hidden");
+}
+
+function closeVerbTable() {
+  document.getElementById("verbOverlay").classList.add("hidden");
+}
+
+function highlightIrregular(base, form) {
+base = base.replace(/(se|ar|er|ir)$/, '');
+  let i = 0;
+  while (i < base.length && i < form.length && base[i] === form[i]) {
+    i++;
+  }
+
+  return (
+    form.slice(0, i) +
+    "<span class='irregular'>" +
+    form.slice(i) +
+    "</span>"
+  );
+}
+
+function generateVerbTable(verb) {
+  const persons = ["yo", "tú", "él/ella", "nosotros/as", "vosotros/as", "ellos/as"];
+  let html = `<h3>${verb.verb} – ${verb.translation}</h3>`;
+
+  html += "<table class='verbTable'><tr><th></th>";
+  persons.forEach(p => html += `<th>${p}</th>`);
+  html += "</tr>";
+
+  ["presente", "preterito", "futuro"].forEach(tense => {
+  const forms = verb.tenses[tense];
+  if (!forms) return;
+
+  html += `<tr><th>${tenseLabels[tense]}</th>`;
+  forms.forEach(f => {
+    html += `<td>${highlightIrregular(verb.verb, f.solution)}</td>`;
+  });
+  html += "</tr>";
+});
+
+  html += "</table>";
+  return html;
+}
+
 window.onload = function () {
   document.getElementById("modeButton").textContent =
     mode === "singleVerb"
@@ -319,5 +445,13 @@ if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("sw.js");
 }
 </script>
+
+<div id="verbOverlay" class="overlay hidden">
+  <div class="overlayContent">
+    <button class="closeOverlay" onclick="closeVerbTable()">✕</button>
+    <div id="verbTableContainer"></div>
+  </div>
+</div>
+
 </body>
 </html>
