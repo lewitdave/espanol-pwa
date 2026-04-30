@@ -244,7 +244,486 @@
       ]
     }
   },
-
+  {
+    "verb": "venir",
+    "translation": "kommen",
+    "tenses": {
+      "presente": [
+        { "person": "yo", "solution": "vengo" },
+        { "person": "tú", "solution": "vienes" },
+        { "person": "él/ella", "solution": "viene" },
+        { "person": "nosotros/as", "solution": "venimos" },
+        { "person": "vosotros/as", "solution": "venís" },
+        { "person": "ellos/as", "solution": "vienen" }
+      ],
+      "preterito": [
+        { "person": "yo", "solution": "vine" },
+        { "person": "tú", "solution": "viniste" },
+        { "person": "él/ella", "solution": "vino" },
+        { "person": "nosotros/as", "solution": "vinimos" },
+        { "person": "vosotros/as", "solution": "vinisteis" },
+        { "person": "ellos/as", "solution": "vinieron" }
+      ],
+      "futuro": [
+        { "person": "yo", "solution": "vendré" },
+        { "person": "tú", "solution": "vendrás" },
+        { "person": "él/ella", "solution": "vendrá" },
+        { "person": "nosotros/as", "solution": "vendremos" },
+        { "person": "vosotros/as", "solution": "vendréis" },
+        { "person": "ellos/as", "solution": "vendrán" }
+      ]
+    }
+  },
+  {
+    "verb": "decir",
+    "translation": "sagen",
+    "tenses": {
+      "presente": [
+        { "person": "yo", "solution": "digo" },
+        { "person": "tú", "solution": "dices" },
+        { "person": "él/ella", "solution": "dice" },
+        { "person": "nosotros/as", "solution": "decimos" },
+        { "person": "vosotros/as", "solution": "decís" },
+        { "person": "ellos/as", "solution": "dicen" }
+      ],
+      "preterito": [
+        { "person": "yo", "solution": "dije" },
+        { "person": "tú", "solution": "dijiste" },
+        { "person": "él/ella", "solution": "dijo" },
+        { "person": "nosotros/as", "solution": "dijimos" },
+        { "person": "vosotros/as", "solution": "dijisteis" },
+        { "person": "ellos/as", "solution": "dijeron" }
+      ],
+      "futuro": [
+        { "person": "yo", "solution": "diré" },
+        { "person": "tú", "solution": "dirás" },
+        { "person": "él/ella", "solution": "dirá" },
+        { "person": "nosotros/as", "solution": "diremos" },
+        { "person": "vosotros/as", "solution": "diréis" },
+        { "person": "ellos/as", "solution": "dirán" }
+      ]
+    }
+  },
+  {
+    "verb": "poner",
+    "translation": "legen / stellen",
+    "tenses": {
+      "presente": [
+        { "person": "yo", "solution": "pongo" },
+        { "person": "tú", "solution": "pones" },
+        { "person": "él/ella", "solution": "pone" },
+        { "person": "nosotros/as", "solution": "ponemos" },
+        { "person": "vosotros/as", "solution": "ponéis" },
+        { "person": "ellos/as", "solution": "ponen" }
+      ],
+      "preterito": [
+        { "person": "yo", "solution": "puse" },
+        { "person": "tú", "solution": "pusiste" },
+        { "person": "él/ella", "solution": "puso" },
+        { "person": "nosotros/as", "solution": "pusimos" },
+        { "person": "vosotros/as", "solution": "pusisteis" },
+        { "person": "ellos/as", "solution": "pusieron" }
+      ],
+      "futuro": [
+        { "person": "yo", "solution": "pondré" },
+        { "person": "tú", "solution": "pondrás" },
+        { "person": "él/ella", "solution": "pondrá" },
+        { "person": "nosotros/as", "solution": "pondremos" },
+        { "person": "vosotros/as", "solution": "pondréis" },
+        { "person": "ellos/as", "solution": "pondrán" }
+      ]
+    }
+  },
+  {
+    "verb": "dar",
+    "translation": "geben",
+    "tenses": {
+      "presente": [
+        { "person": "yo", "solution": "doy" },
+        { "person": "tú", "solution": "das" },
+        { "person": "él/ella", "solution": "da" },
+        { "person": "nosotros/as", "solution": "damos" },
+        { "person": "vosotros/as", "solution": "dais" },
+        { "person": "ellos/as", "solution": "dan" }
+      ],
+      "preterito": [
+        { "person": "yo", "solution": "di" },
+        { "person": "tú", "solution": "diste" },
+        { "person": "él/ella", "solution": "dio" },
+        { "person": "nosotros/as", "solution": "dimos" },
+        { "person": "vosotros/as", "solution": "disteis" },
+        { "person": "ellos/as", "solution": "dieron" }
+      ],
+      "futuro": [
+        { "person": "yo", "solution": "daré" },
+        { "person": "tú", "solution": "darás" },
+        { "person": "él/ella", "solution": "dará" },
+        { "person": "nosotros/as", "solution": "daremos" },
+        { "person": "vosotros/as", "solution": "daréis" },
+        { "person": "ellos/as", "solution": "darán" }
+      ]
+    }
+  },
+  {
+    "verb": "pensar",
+    "translation": "denken",
+    "tenses": {
+      "presente": [
+        { "person": "yo", "solution": "pienso" },
+        { "person": "tú", "solution": "piensas" },
+        { "person": "él/ella", "solution": "piensa" },
+        { "person": "nosotros/as", "solution": "pensamos" },
+        { "person": "vosotros/as", "solution": "pensáis" },
+        { "person": "ellos/as", "solution": "piensan" }
+      ],
+      "preterito": [
+        { "person": "yo", "solution": "pensé" },
+        { "person": "tú", "solution": "pensaste" },
+        { "person": "él/ella", "solution": "pensó" },
+        { "person": "nosotros/as", "solution": "pensamos" },
+        { "person": "vosotros/as", "solution": "pensasteis" },
+        { "person": "ellos/as", "solution": "pensaron" }
+      ],
+      "futuro": [
+        { "person": "yo", "solution": "pensaré" },
+        { "person": "tú", "solution": "pensarás" },
+        { "person": "él/ella", "solution": "pensará" },
+        { "person": "nosotros/as", "solution": "pensaremos" },
+        { "person": "vosotros/as", "solution": "pensaréis" },
+        { "person": "ellos/as", "solution": "pensarán" }
+      ]
+    }
+  },
+  {
+    "verb": "querer",
+    "translation": "wollen / lieben",
+    "tenses": {
+      "presente": [
+        { "person": "yo", "solution": "quiero" },
+        { "person": "tú", "solution": "quieres" },
+        { "person": "él/ella", "solution": "quiere" },
+        { "person": "nosotros/as", "solution": "queremos" },
+        { "person": "vosotros/as", "solution": "queréis" },
+        { "person": "ellos/as", "solution": "quieren" }
+      ],
+      "preterito": [
+        { "person": "yo", "solution": "quise" },
+        { "person": "tú", "solution": "quisiste" },
+        { "person": "él/ella", "solution": "quiso" },
+        { "person": "nosotros/as", "solution": "quisimos" },
+        { "person": "vosotros/as", "solution": "quisisteis" },
+        { "person": "ellos/as", "solution": "quisieron" }
+      ],
+      "futuro": [
+        { "person": "yo", "solution": "querré" },
+        { "person": "tú", "solution": "querrás" },
+        { "person": "él/ella", "solution": "querrá" },
+        { "person": "nosotros/as", "solution": "querremos" },
+        { "person": "vosotros/as", "solution": "querréis" },
+        { "person": "ellos/as", "solution": "querrán" }
+      ]
+    }
+  },
+  {
+    "verb": "entender",
+    "translation": "verstehen",
+    "tenses": {
+      "presente": [
+        { "person": "yo", "solution": "entiendo" },
+        { "person": "tú", "solution": "entiendes" },
+        { "person": "él/ella", "solution": "entiende" },
+        { "person": "nosotros/as", "solution": "entendemos" },
+        { "person": "vosotros/as", "solution": "entendéis" },
+        { "person": "ellos/as", "solution": "entienden" }
+      ],
+      "preterito": [
+        { "person": "yo", "solution": "entendí" },
+        { "person": "tú", "solution": "entendiste" },
+        { "person": "él/ella", "solution": "entendió" },
+        { "person": "nosotros/as", "solution": "entendimos" },
+        { "person": "vosotros/as", "solution": "entendisteis" },
+        { "person": "ellos/as", "solution": "entendieron" }
+      ],
+      "futuro": [
+        { "person": "yo", "solution": "entenderé" },
+        { "person": "tú", "solution": "entenderás" },
+        { "person": "él/ella", "solution": "entenderá" },
+        { "person": "nosotros/as", "solution": "entenderemos" },
+        { "person": "vosotros/as", "solution": "entenderéis" },
+        { "person": "ellos/as", "solution": "entenderán" }
+      ]
+    }
+  },
+  {
+    "verb": "cerrar",
+    "translation": "schließen",
+    "tenses": {
+      "presente": [
+        { "person": "yo", "solution": "cierro" },
+        { "person": "tú", "solution": "cierras" },
+        { "person": "él/ella", "solution": "cierra" },
+        { "person": "nosotros/as", "solution": "cerramos" },
+        { "person": "vosotros/as", "solution": "cerráis" },
+        { "person": "ellos/as", "solution": "cierran" }
+      ],
+      "preterito": [
+        { "person": "yo", "solution": "cerré" },
+        { "person": "tú", "solution": "cerraste" },
+        { "person": "él/ella", "solution": "cerró" },
+        { "person": "nosotros/as", "solution": "cerramos" },
+        { "person": "vosotros/as", "solution": "cerrasteis" },
+        { "person": "ellos/as", "solution": "cerraron" }
+      ],
+      "futuro": [
+        { "person": "yo", "solution": "cerraré" },
+        { "person": "tú", "solution": "cerrarás" },
+        { "person": "él/ella", "solution": "cerrará" },
+        { "person": "nosotros/as", "solution": "cerraremos" },
+        { "person": "vosotros/as", "solution": "cerraréis" },
+        { "person": "ellos/as", "solution": "cerrarán" }
+      ]
+    }
+  },
+  {
+    "verb": "dormir",
+    "translation": "schlafen",
+    "tenses": {
+      "presente": [
+        { "person": "yo", "solution": "duermo" },
+        { "person": "tú", "solution": "duermes" },
+        { "person": "él/ella", "solution": "duerme" },
+        { "person": "nosotros/as", "solution": "dormimos" },
+        { "person": "vosotros/as", "solution": "dormís" },
+        { "person": "ellos/as", "solution": "duermen" }
+      ],
+      "preterito": [
+        { "person": "yo", "solution": "dormí" },
+        { "person": "tú", "solution": "dormiste" },
+        { "person": "él/ella", "solution": "durmió" },
+        { "person": "nosotros/as", "solution": "dormimos" },
+        { "person": "vosotros/as", "solution": "dormisteis" },
+        { "person": "ellos/as", "solution": "durmieron" }
+      ],
+      "futuro": [
+        { "person": "yo", "solution": "dormiré" },
+        { "person": "tú", "solution": "dormirás" },
+        { "person": "él/ella", "solution": "dormirá" },
+        { "person": "nosotros/as", "solution": "dormiremos" },
+        { "person": "vosotros/as", "solution": "dormiréis" },
+        { "person": "ellos/as", "solution": "dormirán" }
+      ]
+    }
+  },
+  {
+    "verb": "volver",
+    "translation": "zurückkehren",
+    "tenses": {
+      "presente": [
+        { "person": "yo", "solution": "vuelvo" },
+        { "person": "tú", "solution": "vuelves" },
+        { "person": "él/ella", "solution": "vuelve" },
+        { "person": "nosotros/as", "solution": "volvemos" },
+        { "person": "vosotros/as", "solution": "volvéis" },
+        { "person": "ellos/as", "solution": "vuelven" }
+      ],
+      "preterito": [
+        { "person": "yo", "solution": "volví" },
+        { "person": "tú", "solution": "volviste" },
+        { "person": "él/ella", "solution": "volvió" },
+        { "person": "nosotros/as", "solution": "volvimos" },
+        { "person": "vosotros/as", "solution": "volvisteis" },
+        { "person": "ellos/as", "solution": "volvieron" }
+      ],
+      "futuro": [
+        { "person": "yo", "solution": "volveré" },
+        { "person": "tú", "solution": "volverás" },
+        { "person": "él/ella", "solution": "volverá" },
+        { "person": "nosotros/as", "solution": "volveremos" },
+        { "person": "vosotros/as", "solution": "volveréis" },
+        { "person": "ellos/as", "solution": "volverán" }
+      ]
+    }
+  },
+  {
+    "verb": "encontrar",
+    "translation": "finden",
+    "tenses": {
+      "presente": [
+        { "person": "yo", "solution": "encuentro" },
+        { "person": "tú", "solution": "encuentras" },
+        { "person": "él/ella", "solution": "encuentra" },
+        { "person": "nosotros/as", "solution": "encontramos" },
+        { "person": "vosotros/as", "solution": "encontráis" },
+        { "person": "ellos/as", "solution": "encuentran" }
+      ],
+      "preterito": [
+        { "person": "yo", "solution": "encontré" },
+        { "person": "tú", "solution": "encontraste" },
+        { "person": "él/ella", "solution": "encontró" },
+        { "person": "nosotros/as", "solution": "encontramos" },
+        { "person": "vosotros/as", "solution": "encontrasteis" },
+        { "person": "ellos/as", "solution": "encontraron" }
+      ],
+      "futuro": [
+        { "person": "yo", "solution": "encontraré" },
+        { "person": "tú", "solution": "encontrarás" },
+        { "person": "él/ella", "solution": "encontrará" },
+        { "person": "nosotros/as", "solution": "encontraremos" },
+        { "person": "vosotros/as", "solution": "encontraréis" },
+        { "person": "ellos/as", "solution": "encontrarán" }
+      ]
+    }
+  },
+  {
+    "verb": "pedir",
+    "translation": "bitten",
+    "tenses": {
+      "presente": [
+        { "person": "yo", "solution": "pido" },
+        { "person": "tú", "solution": "pides" },
+        { "person": "él/ella", "solution": "pide" },
+        { "person": "nosotros/as", "solution": "pedimos" },
+        { "person": "vosotros/as", "solution": "pedís" },
+        { "person": "ellos/as", "solution": "piden" }
+      ],
+      "preterito": [
+        { "person": "yo", "solution": "pedí" },
+        { "person": "tú", "solution": "pediste" },
+        { "person": "él/ella", "solution": "pidió" },
+        { "person": "nosotros/as", "solution": "pedimos" },
+        { "person": "vosotros/as", "solution": "pedisteis" },
+        { "person": "ellos/as", "solution": "pidieron" }
+      ],
+      "futuro": [
+        { "person": "yo", "solution": "pediré" },
+        { "person": "tú", "solution": "pedirás" },
+        { "person": "él/ella", "solution": "pedirá" },
+        { "person": "nosotros/as", "solution": "pediremos" },
+        { "person": "vosotros/as", "solution": "pediréis" },
+        { "person": "ellos/as", "solution": "pedirán" }
+      ]
+    }
+  },
+  {
+    "verb": "servir",
+    "translation": "dienen",
+    "tenses": {
+      "presente": [
+        { "person": "yo", "solution": "sirvo" },
+        { "person": "tú", "solution": "sirves" },
+        { "person": "él/ella", "solution": "sirve" },
+        { "person": "nosotros/as", "solution": "servimos" },
+        { "person": "vosotros/as", "solution": "servís" },
+        { "person": "ellos/as", "solution": "sirven" }
+      ],
+      "preterito": [
+        { "person": "yo", "solution": "serví" },
+        { "person": "tú", "solution": "serviste" },
+        { "person": "él/ella", "solution": "sirvió" },
+        { "person": "nosotros/as", "solution": "servimos" },
+        { "person": "vosotros/as", "solution": "servisteis" },
+        { "person": "ellos/as", "solution": "sirvieron" }
+      ],
+      "futuro": [
+        { "person": "yo", "solution": "serviré" },
+        { "person": "tú", "solution": "servirás" },
+        { "person": "él/ella", "solution": "servirá" },
+        { "person": "nosotros/as", "solution": "serviremos" },
+        { "person": "vosotros/as", "solution": "serviréis" },
+        { "person": "ellos/as", "solution": "servirán" }
+      ]
+    }
+  },
+  {
+    "verb": "repetir",
+    "translation": "wiederholen",
+    "tenses": {
+      "presente": [
+        { "person": "yo", "solution": "repito" },
+        { "person": "tú", "solution": "repites" },
+        { "person": "él/ella", "solution": "repite" },
+        { "person": "nosotros/as", "solution": "repetimos" },
+        { "person": "vosotros/as", "solution": "repetís" },
+        { "person": "ellos/as", "solution": "repiten" }
+      ],
+      "preterito": [
+        { "person": "yo", "solution": "repetí" },
+        { "person": "tú", "solution": "repetiste" },
+        { "person": "él/ella", "solution": "repitió" },
+        { "person": "nosotros/as", "solution": "repetimos" },
+        { "person": "vosotros/as", "solution": "repetisteis" },
+        { "person": "ellos/as", "solution": "repitieron" }
+      ],
+      "futuro": [
+        { "person": "yo", "solution": "repetiré" },
+        { "person": "tú", "solution": "repetirás" },
+        { "person": "él/ella", "solution": "repetirá" },
+        { "person": "nosotros/as", "solution": "repetiremos" },
+        { "person": "vosotros/as", "solution": "repetiréis" },
+        { "person": "ellos/as", "solution": "repetirán" }
+      ]
+    }
+  },
+  {
+    "verb": "salir",
+    "translation": "hinausgehen",
+    "tenses": {
+      "presente": [
+        { "person": "yo", "solution": "salgo" },
+        { "person": "tú", "solution": "sales" },
+        { "person": "él/ella", "solution": "sale" },
+        { "person": "nosotros/as", "solution": "salimos" },
+        { "person": "vosotros/as", "solution": "salís" },
+        { "person": "ellos/as", "solution": "salen" }
+      ],
+      "preterito": [
+        { "person": "yo", "solution": "salí" },
+        { "person": "tú", "solution": "saliste" },
+        { "person": "él/ella", "solution": "salió" },
+        { "person": "nosotros/as", "solution": "salimos" },
+        { "person": "vosotros/as", "solution": "salisteis" },
+        { "person": "ellos/as", "solution": "salieron" }
+      ],
+      "futuro": [
+        { "person": "yo", "solution": "saldré" },
+        { "person": "tú", "solution": "saldrás" },
+        { "person": "él/ella", "solution": "saldrá" },
+        { "person": "nosotros/as", "solution": "saldremos" },
+        { "person": "vosotros/as", "solution": "saldréis" },
+        { "person": "ellos/as", "solution": "saldrán" }
+      ]
+    }
+  },
+  {
+    "verb": "traer",
+    "translation": "bringen",
+    "tenses": {
+      "presente": [
+        { "person": "yo", "solution": "traigo" },
+        { "person": "tú", "solution": "traes" },
+        { "person": "él/ella", "solution": "trae" },
+        { "person": "nosotros/as", "solution": "traemos" },
+        { "person": "vosotros/as", "solution": "traéis" },
+        { "person": "ellos/as", "solution": "traen" }
+      ],
+      "preterito": [
+        { "person": "yo", "solution": "traje" },
+        { "person": "tú", "solution": "trajiste" },
+        { "person": "él/ella", "solution": "trajo" },
+        { "person": "nosotros/as", "solution": "trajimos" },
+        { "person": "vosotros/as", "solution": "trajisteis" },
+        { "person": "ellos/as", "solution": "trajeron" }
+      ],
+      "futuro": [
+        { "person": "yo", "solution": "traeré" },
+        { "person": "tú", "solution": "traerás" },
+        { "person": "él/ella", "solution": "traerá" },
+        { "person": "nosotros/as", "solution": "traeremos" },
+        { "person": "vosotros/as", "solution": "traeréis" },
+        { "person": "ellos/as", "solution": "traerán" }
+      ]
+    }
+  },
   {
     "verb": "reírse",
     "translation": "lachen",
@@ -274,39 +753,7 @@
         { "person": "ellos/as", "solution": "se reirán" }
       ]
     }
-  },
-
-  {
-    "verb": "perder",
-    "translation": "verlieren",
-    "tenses": {
-      "presente": [
-        { "person": "yo", "solution": "pierdo" },
-        { "person": "tú", "solution": "pierdes" },
-        { "person": "él/ella", "solution": "pierde" },
-        { "person": "nosotros/as", "solution": "perdemos" },
-        { "person": "vosotros/as", "solution": "perdéis" },
-        { "person": "ellos/as", "solution": "pierden" }
-      ],
-      "preterito": [
-        { "person": "yo", "solution": "perdí" },
-        { "person": "tú", "solution": "perdiste" },
-        { "person": "él/ella", "solution": "perdió" },
-        { "person": "nosotros/as", "solution": "perdimos" },
-        { "person": "vosotros/as", "solution": "perdisteis" },
-        { "person": "ellos/as", "solution": "perdieron" }
-      ],
-      "futuro": [
-        { "person": "yo", "solution": "perderé" },
-        { "person": "tú", "solution": "perderás" },
-        { "person": "él/ella", "solution": "perderá" },
-        { "person": "nosotros/as", "solution": "perderemos" },
-        { "person": "vosotros/as", "solution": "perderéis" },
-        { "person": "ellos/as", "solution": "perderán" }
-      ]
-    }
-  },
-
+  },  
   {
     "verb": "cantar",
     "translation": "singen",
@@ -336,8 +783,7 @@
         { "person": "ellos/as", "solution": "cantarán" }
       ]
     }
-  },
-
+  },  
   {
     "verb": "llorar",
     "translation": "weinen",
