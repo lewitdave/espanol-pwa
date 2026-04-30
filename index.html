@@ -10,15 +10,25 @@
     * {
   box-sizing: border-box;
 }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: none;
+}
+
     body {
   font-family: Arial, sans-serif;
   background: #f4f6f8;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  min-height: 100svh;
+  min-height: 100%;
   padding: 16px;
   padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 #modeButton {
@@ -34,7 +44,10 @@
   max-width: 420px;
   text-align: center;
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-  margin-top: 24px;
+  margin-top: 24px;  
+  position: sticky;
+  top: env(safe-area-inset-top);
+
 }
 
 #question {
@@ -130,9 +143,7 @@ button {
 <button id="modeButton" onclick="toggleMode()">
   Modus: Ein Verb komplett
 </button>
-
-
-
+ 
   <div id="feedback"></div>
 </div>
 
