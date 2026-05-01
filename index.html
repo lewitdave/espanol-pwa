@@ -407,22 +407,32 @@ base = base.replace(/(se|ar|er|ir)$/, '');
 
 function generateVerbTable(verb) {
   const persons = ["yo", "tú", "él/ella", "nosotros/as", "vosotros/as", "ellos/as"];
+  const tenses = ["presente", "preterito", "futuro"];
+
   let html = `<h3>${verb.verb} – ${verb.translation}</h3>`;
+  html += "<table class='verbTable'>";
 
-  html += "<table class='verbTable'><tr><th></th>";
-  persons.forEach(p => html += `<th>${p}</th>`);
-  html += "</tr>";
-
-  ["presente", "preterito", "futuro"].forEach(tense => {
-  const forms = verb.tenses[tense];
-  if (!forms) return;
-
-  html += `<tr><th>${tenseLabels[tense]}</th>`;
-  forms.forEach(f => {
-    html += `<td>${highlightIrregular(verb.verb, f.solution)}</td>`;
+  // Tabellenkopf
+  html += "<tr><th>Person</th>";
+  tenses.forEach(t => {
+    html += `<th>${tenseLabels[t]}</th>`;
   });
   html += "</tr>";
-});
+
+  // Zeilen pro Person
+  persons.forEach(person => {
+    html += `<tr><th>${person}</th>`;
+
+    tenses.forEach(t => {
+      const formObj = verb.tenses[t]?.find(f => f.person === person);
+      const value = formObj
+        ? highlightIrregular(verb.verb, formObj.solution)
+        : "—";
+      html += `<td>${value}</td>`;
+    });
+
+    html += "</tr>";
+  });
 
   html += "</table>";
   return html;
