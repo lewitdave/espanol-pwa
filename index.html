@@ -247,6 +247,13 @@ function getURLParams() {
   };
 }
 
+  function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
 async function loadVerbs() {
   const { set, tense } = getURLParams();
   activeTense = tense;
@@ -263,26 +270,32 @@ async function loadVerbs() {
 
     verbs = data
       .filter(v => v.tenses && v.tenses[tense])
-      
-.map(v => ({
-  verb: v.verb,
-  translation: v.translation,
-  forms: v.tenses[tense],   // fürs Training
-  tenses: v.tenses          // ✅ fürs Overlay
-}))
-
+      .map(v => ({
+        verb: v.verb,
+        translation: v.translation,
+        forms: v.tenses[tense], // fürs Training
+        tenses: v.tenses         // fürs Overlay
+      }))
       .filter(v => v.forms.length > 0);
 
+    // ⛔ Abbruch, wenn keine Verben vorhanden
     if (verbs.length === 0) {
       alert(`Keine Vokabeln für Zeitform: ${tense}`);
       return;
     }
 
-    // Reset für Lernmodus
+    // ✅ 1️⃣ Verben einmal zufällig mischen
+    shuffleArray(verbs);
+
+    // ✅ 2️⃣ Aktive Zeitform im UI hervorheben
+    updateActiveTenseButton();
+
+    // ✅ Reset für Lernmodus
     currentVerb = null;
     currentVerbIndex = 0;
     currentFormIndex = 0;
 
+    // ✅ Erste Aufgabe laden
     nextVocab();
 
   } catch (error) {
@@ -375,6 +388,22 @@ function setTense(tense) {
   }
 
   window.location.search = params.toString();
+}
+
+  function updateActiveTenseButton() {
+  const buttons = document.querySelectorAll("#tenseButtons button");
+
+  buttons.forEach(btn => {
+    btn.classList.remove("active");
+  });
+
+  const activeButton = Array.from(buttons).find(
+    btn => btn.textContent.toLowerCase().includes(tenseLabels[activeTense].toLowerCase())
+  );
+
+  if (activeButton) {
+    activeButton.classList.add("active");
+  }
 }
 
 function openVerbTable() {
