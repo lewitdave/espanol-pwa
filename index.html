@@ -496,6 +496,15 @@ function startSentenceStep() {
   document.getElementById("answer").focus();
 }
 
+function normalizeAnswer(text) {
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, " ")       // mehrere Leerzeichen → eins
+    .replace(/[.!?]+$/, "");    // Satzendzeichen entfernen
+}
+
+
 function checkAnswer() {
   const inputEl = document.getElementById("answer");
   const feedbackEl = document.getElementById("feedback");
@@ -532,7 +541,13 @@ function checkAnswer() {
       );
     }
 
-    if (solutions.includes(user)) {
+    const normalizedUser = normalizeAnswer(user);
+
+const normalizedSolutions = solutions.map(s =>
+  normalizeAnswer(s)
+);
+
+if (normalizedSolutions.includes(normalizedUser)) {
       // ✅ richtig
       if (currentExample) {
         startSentenceStep();
@@ -556,7 +571,12 @@ function checkAnswer() {
 
   /* ---------- SCHRITT 2: SATZ ---------- */
   if (vocabStep === 2) {
-    if (user === currentExample.sentence.toLowerCase()) {
+    const normalizedUser = normalizeAnswer(user);
+const normalizedSolution = normalizeAnswer(currentExample.sentence);
+
+if (normalizedUser === normalizedSolution) {
+
+
       feedbackEl.textContent = "✔ Richtig!";
       feedbackEl.className = "correct";
       setTimeout(nextVocabVocabulary, 600);
@@ -747,7 +767,8 @@ function generateVocabularyDetails(vocab) {
   return html;
 }
 
-window.onload = function () {window.onload = functionElementById("modeButton").textContent =
+window.onload = function () {
+  document.getElementById("modeButton").textContent =
     mode === "singleVerb"
       ? "Modus: Ein Verb komplett"
       : "Modus: Zufall";
@@ -765,7 +786,6 @@ window.onload = function () {window.onload = functionElementById("modeButton").t
 
   loadVerbs();
 };
-
 
 
 
