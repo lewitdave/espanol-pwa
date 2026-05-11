@@ -204,6 +204,9 @@ button {
   spellcheck="false"
   inputmode="text"
 />
+
+ <div id="feedback"></div>
+
 <div id="tenseButtons">
   <button onclick="setTense('presente')">Gegenwart</button>
   <button onclick="setTense('preterito')">Vergangenheit</button>
@@ -223,7 +226,7 @@ button {
 </button>
 
  
-  <div id="feedback"></div>
+ 
 </div>
 
 <script>
@@ -546,13 +549,6 @@ function checkAnswer() {
         feedbackEl.innerHTML = `✘ Richtig ist: ${solutions.join(" oder ")}`;
         feedbackEl.className = "wrong";
 
-        setTimeout(() => {
-          if (currentExample) {
-            startSentenceStep();
-          } else {
-            nextVocabVocabulary();
-          }
-        }, 800);
       }
     }
     return;
@@ -575,12 +571,12 @@ function checkAnswer() {
         feedbackEl.innerHTML =
           `✘ Richtig wäre:<br><strong>${currentExample.sentence}</strong>`;
         feedbackEl.className = "wrong";
-        setTimeout(nextVocabVocabulary, 1200);
+        
       }
     }
   }
 }
-``
+
 
 function toggleMode() {
   if (mode === "singleVerb") {
@@ -605,14 +601,26 @@ if (verbs.length > 0) {
 
 function toggleTrainerType() {
   if (trainerType === "verbs") {
+    // ➜ Wechsel zu Vokabeln
     trainerType = "vocab";
     document.getElementById("trainerTypeButton").textContent = "Modus: Vokabeln";
     document.getElementById("categoryButton").style.display = "block";
+
+    // ✅ VERBEN-UI AUSBLENDEN
+    document.getElementById("tenseButtons").style.display = "none";
+    document.getElementById("modeButton").style.display = "none";
+
     loadVocabulary(activeVocabCategory);
   } else {
+    // ➜ Wechsel zu Verben
     trainerType = "verbs";
     document.getElementById("trainerTypeButton").textContent = "Modus: Verben";
     document.getElementById("categoryButton").style.display = "none";
+
+    // ✅ VERBEN-UI WIEDER EINBLENDEN
+    document.getElementById("tenseButtons").style.display = "flex";
+    document.getElementById("modeButton").style.display = "block";
+
     loadVerbs();
   }
 }
@@ -739,14 +747,25 @@ function generateVocabularyDetails(vocab) {
   return html;
 }
 
-window.onload = function () {
-  document.getElementById("modeButton").textContent =
+window.onload = function () {window.onload = functionElementById("modeButton").textContent =
     mode === "singleVerb"
       ? "Modus: Ein Verb komplett"
       : "Modus: Zufall";
 
-  loadVerbs(); // ✅ WICHTIG: nicht nextVocab()
+  // ✅ UI initial korrekt setzen
+  if (trainerType === "vocab") {
+    document.getElementById("tenseButtons").style.display = "none";
+    document.getElementById("modeButton").style.display = "none";
+    document.getElementById("categoryButton").style.display = "block";
+  } else {
+    document.getElementById("tenseButtons").style.display = "flex";
+    document.getElementById("modeButton").style.display = "block";
+    document.getElementById("categoryButton").style.display = "none";
+  }
+
+  loadVerbs();
 };
+
 
 
 
