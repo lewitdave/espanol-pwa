@@ -189,13 +189,13 @@ button {
   <h2 id="question"></h2>
 
   <button id="showTableBtn" onclick="openVerbTable()">
-  📋 Formen anzeigen
+  📋 Details anzeigen
 </button>
   
 <input
   type="text"
   id="answer"
-  placeholder="Konjugation eingeben"
+  placeholder="Deine Eingabe"
   onkeydown="if(event.key === 'Enter') checkAnswer();"
 
   autocapitalize="none"
@@ -213,6 +213,15 @@ button {
 <button id="modeButton" onclick="toggleMode()">
   Modus: Ein Verb komplett
 </button>
+
+<button id="trainerTypeButton" onclick="toggleTrainerType()">
+  Modus: Verben
+</button>
+
+<button id="categoryButton" onclick="openCategoryOverlay()" style="display:none">
+  Kategorie: Alle ▾
+</button>
+
  
   <div id="feedback"></div>
 </div>
@@ -237,6 +246,21 @@ let mode = "singleVerb";
 
 let currentVerbIndex = 0;
 let currentFormIndex = 0;
+
+let trainerType = "verbs";
+// mögliche Werte: "verbs", "vocab"
+
+let activeVocabCategory = null;
+// null = alle Kategorien
+
+let vocabStep = 1;
+// 1 = Wort, 2 = Satz
+
+let vocabAttempts = 0;
+// Anzahl Versuche für die aktuelle Aufgabe
+
+let currentExample = null;
+// aktuell ausgewählter Beispielsatz für Schritt 2
 
 
 function getURLParams() {
@@ -304,6 +328,86 @@ async function loadVerbs() {
   }
 }
 
+let vocabulary = [];
+let currentVocab;
+
+async function loadVocabulary(category = null) {
+  try {
+    const response = await fetch("data/vokabeln.json");
+    if (!response.ok) throw new Error("vokabeln.json nicht gefunden");
+
+    let data = await response.json();
+
+    // optional nach Kategorie filtern
+    if (category) {
+      data = data.filter(v => v.categories?.includes(category));
+    }
+
+    vocabulary = data;
+
+    if (vocabulary.length === 0) {
+      alert("Keine Vokabeln gefunden");
+      return;
+    }
+
+    shuffleArray(vocabulary);
+    currentVocab = null;
+
+    nextVocabVocabulary();
+
+  } catch (err) {
+    console.error(err);
+    alert("Fehler beim Laden der Vokabeln");
+  }
+}
+
+function getAllVocabCategories(data) {
+  const set = new Set();
+  data.forEach(v => {
+    v.categories?.forEach(cat => set.add(cat));
+  });
+  return Array.from(set).sort();
+}
+
+function openCategoryOverlay() {
+  const container = document.getElementById("categoryList");
+  container.innerHTML = "";
+
+  // "Alle"-Option
+  container.innerHTML += `
+    <button onclick="setVocabCategory(null)">
+      Alle
+    </button>
+  `;
+
+  const categories = getAllVocabCategories(vocabulary);
+  categories.forEach(cat => {
+    container.innerHTML += `
+      <button onclick="setVocabCategory('${cat}')">
+        ${cat}
+      </button>
+    `;
+  });
+
+  document.getElementById("categoryOverlay").classList.remove("hidden");
+}
+
+function closeCategoryOverlay() {
+  document.getElementById("categoryOverlay").classList.add("hidden");
+}
+
+function setVocabCategory(category) {
+  activeVocabCategory = category;
+
+  const label = category ? category : "Alle";
+  document.getElementById("categoryButton").textContent =
+    `Kategorie: ${label} ▾`;
+
+  closeCategoryOverlay();
+  loadVocabulary(activeVocabCategory);
+}
+
+
 function nextVocab() {
 
   closeVerbTable();
@@ -339,22 +443,144 @@ function nextVocab() {
   document.getElementById("answer").focus();
 }
 
+function nextVocabVocabulary() {
+  closeVerbTable();
+
+  if (vocabulary.length === 0) {
+    loadVocabulary(activeVocabCategory);
+    return;
+  }
+
+  currentVocab = vocabulary.shift();
+  vocabStep = 1;
+  vocabAttempts = 0;
+  currentExample = null;
+
+  // Falls Beispielsätze existieren → einen zufällig vorbereiten
+  if (currentVocab.examples && currentVocab.examples.length > 0) {
+    const index = Math.floor(Math.random() * currentVocab.examples.length);
+    currentExample = currentVocab.examples[index];
+  }
+
+  // Schritt 1: Wort
+  document.getElementById("question").textContent =
+    currentVocab.translation;
+
+  document.getElementById("meta").textContent =
+    "Spanisches Wort eingeben";
+
+  document.getElementById("answer").value = "";
+  document.getElementById("feedback").textContent = "";
+  document.getElementById("feedback").className = "";
+
+  document.getElementById("answer").focus();
+}
+
+function startSentenceStep() {
+  vocabStep = 2;
+  vocabAttempts = 0;
+
+  document.getElementById("question").textContent =
+    currentExample.translation;
+
+  document.getElementById("meta").textContent =
+    "Satz auf Spanisch bilden";
+
+  document.getElementById("answer").value = "";
+  document.getElementById("feedback").textContent = "";
+  document.getElementById("feedback").className = "";
+
+  document.getElementById("answer").focus();
+}
+
 function checkAnswer() {
-  const userAnswer = document.getElementById("answer").value.trim();
+  const inputEl = document.getElementById("answer");
+  const feedbackEl = document.getElementById("feedback");
+  const user = inputEl.value.trim().toLowerCase();
 
-  if (userAnswer.toLowerCase() === currentForm.solution.toLowerCase()) {
-    document.getElementById("feedback").textContent = "✔ Richtig!";
-    document.getElementById("feedback").className = "correct";
+  /* ===============================
+     VERB-TRAINER
+     =============================== */
+  if (trainerType === "verbs") {
+    if (user === currentForm.solution.toLowerCase()) {
+      feedbackEl.textContent = "✔ Richtig!";
+      feedbackEl.className = "correct";
+      currentFormIndex++;
+      setTimeout(nextVocab, 500);
+    } else {
+      feedbackEl.textContent = `✘ Falsch. Richtig ist: ${currentForm.solution}`;
+      feedbackEl.className = "wrong";
+    }
+    return;
+  }
 
-    currentFormIndex++;   // 👉 nächste Person desselben Verbs
-    setTimeout(nextVocab, 500);
+  /* ===============================
+     VOCAB-TRAINER
+     =============================== */
+  if (trainerType !== "vocab") return;
 
-  } else {
-    document.getElementById("feedback").textContent =
-      `✘ Falsch. Richtig ist: ${currentForm.solution}`;
-    document.getElementById("feedback").className = "wrong";
+  /* ---------- SCHRITT 1: VOKABEL ---------- */
+  if (vocabStep === 1) {
+    const solutions = [currentVocab.word.toLowerCase()];
+
+    if (currentVocab.article) {
+      solutions.push(
+        `${currentVocab.article.toLowerCase()} ${currentVocab.word.toLowerCase()}`
+      );
+    }
+
+    if (solutions.includes(user)) {
+      // ✅ richtig
+      if (currentExample) {
+        startSentenceStep();
+      } else {
+        nextVocabVocabulary();
+      }
+    } else {
+      vocabAttempts++;
+
+      if (vocabAttempts === 1) {
+        feedbackEl.textContent = "Das war falsch. Versuche es erneut.";
+        feedbackEl.className = "wrong";
+      } else {
+        feedbackEl.innerHTML = `✘ Richtig ist: ${solutions.join(" oder ")}`;
+        feedbackEl.className = "wrong";
+
+        setTimeout(() => {
+          if (currentExample) {
+            startSentenceStep();
+          } else {
+            nextVocabVocabulary();
+          }
+        }, 800);
+      }
+    }
+    return;
+  }
+
+  /* ---------- SCHRITT 2: SATZ ---------- */
+  if (vocabStep === 2) {
+    if (user === currentExample.sentence.toLowerCase()) {
+      feedbackEl.textContent = "✔ Richtig!";
+      feedbackEl.className = "correct";
+      setTimeout(nextVocabVocabulary, 600);
+    } else {
+      vocabAttempts++;
+
+      if (vocabAttempts === 1) {
+        feedbackEl.textContent =
+          "Das war noch nicht korrekt. Versuche es erneut.";
+        feedbackEl.className = "wrong";
+      } else {
+        feedbackEl.innerHTML =
+          `✘ Richtig wäre:<br><strong>${currentExample.sentence}</strong>`;
+        feedbackEl.className = "wrong";
+        setTimeout(nextVocabVocabulary, 1200);
+      }
+    }
   }
 }
+``
 
 function toggleMode() {
   if (mode === "singleVerb") {
@@ -374,9 +600,23 @@ function toggleMode() {
   
 if (verbs.length > 0) {
   nextVocab();
+  }
 }
 
+function toggleTrainerType() {
+  if (trainerType === "verbs") {
+    trainerType = "vocab";
+    document.getElementById("trainerTypeButton").textContent = "Modus: Vokabeln";
+    document.getElementById("categoryButton").style.display = "block";
+    loadVocabulary(activeVocabCategory);
+  } else {
+    trainerType = "verbs";
+    document.getElementById("trainerTypeButton").textContent = "Modus: Verben";
+    document.getElementById("categoryButton").style.display = "none";
+    loadVerbs();
+  }
 }
+
 
 function setTense(tense) {
   const params = new URLSearchParams(window.location.search);
@@ -406,11 +646,17 @@ function setTense(tense) {
   }
 }
 
+
 function openVerbTable() {
-  if (!currentVerb) return;
+  if (trainerType === "verbs" && !currentVerb) return;
+  if (trainerType === "vocab" && !currentVocab) return;
 
   const container = document.getElementById("verbTableContainer");
+ if (trainerType === "verbs") {
   container.innerHTML = generateVerbTable(currentVerb);
+} else {
+  container.innerHTML = generateVocabularyDetails(currentVocab);
+}
 
   document.getElementById("verbOverlay").classList.remove("hidden");
 }
@@ -467,6 +713,32 @@ function generateVerbTable(verb) {
   return html;
 }
 
+function generateVocabularyDetails(vocab) {
+  let html = `<h3>${vocab.word} – ${vocab.translation}</h3>`;
+
+  if (vocab.article) {
+    html += `<p><strong>Artikel:</strong> ${vocab.article}</p>`;
+  }
+
+  if (vocab.plural) {
+    html += `<p><strong>Plural:</strong> ${vocab.plural}</p>`;
+  }
+
+  if (vocab.categories?.length) {
+    html += `<p><strong>Kategorie:</strong> ${vocab.categories.join(", ")}</p>`;
+  }
+
+  if (vocab.examples?.length) {
+    html += "<h4>Beispiele</h4><ul>";
+    vocab.examples.forEach(ex => {
+      html += `<li>${ex.sentence}<br><em>${ex.translation}</em></li>`;
+    });
+    html += "</ul>";
+  }
+
+  return html;
+}
+
 window.onload = function () {
   document.getElementById("modeButton").textContent =
     mode === "singleVerb"
@@ -489,6 +761,14 @@ if ("serviceWorker" in navigator) {
   <div class="overlayContent">
     <button class="closeOverlay" onclick="closeVerbTable()">✕</button>
     <div id="verbTableContainer"></div>
+  </div>
+</div>
+
+<div id="categoryOverlay" class="overlay hidden">
+  <div class="overlayContent">
+    <button class="closeOverlay" onclick="closeCategoryOverlay()">✕</button>
+    <h3>Kategorie auswählen</h3>
+    <div id="categoryList"></div>
   </div>
 </div>
 
