@@ -1,0 +1,927 @@
+[
+  {
+    "word": "trabajo",
+    "translation": "Arbeit",
+    "type": "noun",
+    "categories": ["alltag"],
+    "gender": "m",
+    "article": "el",
+    "plural": "trabajos",
+    "examples": [
+      { "sentence": "Mi trabajo es nuevo.", "translation": "Meine Arbeit ist neu." },
+      { "sentence": "Trabajo en casa.", "translation": "Ich arbeite zu Hause." },
+      { "sentence": "Estoy en el trabajo.", "translation": "Ich bin bei der Arbeit." }
+    ]
+  },
+  {
+    "word": "amigo",
+    "translation": "Freund",
+    "type": "noun",
+    "categories": ["personen"],
+    "gender": "m",
+    "article": "el",
+    "plural": "amigos",
+    "examples": [
+      { "sentence": "Mi amigo vive aquí.", "translation": "Mein Freund lebt hier." },
+      { "sentence": "Mi amigo es simpático.", "translation": "Mein Freund ist nett." },
+      { "sentence": "Hablo con mi amigo.", "translation": "Ich spreche mit meinem Freund." }
+    ]
+  },
+  {
+    "word": "ciudad",
+    "translation": "Stadt",
+    "type": "noun",
+    "categories": ["alltag"],
+    "gender": "f",
+    "article": "la",
+    "plural": "ciudades",
+    "examples": [
+      { "sentence": "La ciudad es grande.", "translation": "Die Stadt ist groß." },
+      { "sentence": "Vivo en la ciudad.", "translation": "Ich lebe in der Stadt." },
+      { "sentence": "Esta ciudad es bonita.", "translation": "Diese Stadt ist schön." }
+    ]
+  },
+
+  {
+    "word": "vivir",
+    "translation": "leben",
+    "type": "verb",
+    "categories": ["alltag"],
+    "examples": [
+      { "sentence": "Vivo en Alemania.", "translation": "Ich lebe in Deutschland." },
+      { "sentence": "Vivo aquí.", "translation": "Ich lebe hier." },
+      { "sentence": "Vivo con mi familia.", "translation": "Ich lebe mit meiner Familie." }
+    ]
+  },
+  {
+    "word": "trabajar",
+    "translation": "arbeiten",
+    "type": "verb",
+    "categories": ["alltag"],
+    "examples": [
+      { "sentence": "Trabajo mucho.", "translation": "Ich arbeite viel." },
+      { "sentence": "Trabajo aquí.", "translation": "Ich arbeite hier." },
+      { "sentence": "Mi madre trabaja.", "translation": "Meine Mutter arbeitet." }
+    ]
+  },
+
+  {
+    "word": "grande",
+    "translation": "groß",
+    "type": "adjective",
+    "categories": ["beschreibung"],
+    "examples": [
+      { "sentence": "La casa es grande.", "translation": "Das Haus ist groß." },
+      { "sentence": "La ciudad es grande.", "translation": "Die Stadt ist groß." },
+      { "sentence": "Mi trabajo es grande.", "translation": "Meine Arbeit ist groß." }
+    ]
+  },
+  {
+    "word": "pequeño",
+    "translation": "klein",
+    "type": "adjective",
+    "categories": ["beschreibung"],
+    "examples": [
+      { "sentence": "La casa es pequeña.", "translation": "Das Haus ist klein." },
+      { "sentence": "Es un problema pequeño.", "translation": "Es ist ein kleines Problem." },
+      { "sentence": "Mi trabajo es pequeño.", "translation": "Meine Arbeit ist klein." }
+    ]
+  },
+
+  {
+    "word": "siempre",
+    "translation": "immer",
+    "type": "adverb",
+    "categories": ["häufigkeit"],
+    "examples": [
+      { "sentence": "Siempre trabajo aquí.", "translation": "Ich arbeite immer hier." },
+      { "sentence": "Siempre vivo aquí.", "translation": "Ich lebe immer hier." },
+      { "sentence": "Siempre quiero café.", "translation": "Ich will immer Kaffee." }
+    ]
+  },
+  {
+    "word": "nunca",
+    "translation": "nie",
+    "type": "adverb",
+    "categories": ["häufigkeit"],
+    "examples": [
+      { "sentence": "Nunca trabajo aquí.", "translation": "Ich arbeite nie hier." },
+      { "sentence": "Nunca como carne.", "translation": "Ich esse nie Fleisch." },
+      { "sentence": "Nunca vivo solo.", "translation": "Ich lebe nie allein." }
+    ]
+  },
+  
+  {
+    "word": "familia",
+    "translation": "Familie",
+    "type": "noun",
+    "categories": ["familie"],
+    "gender": "f",
+    "article": "la",
+    "plural": "familias",
+    "examples": [
+      { "sentence": "Mi familia vive aquí.", "translation": "Meine Familie lebt hier." },
+      { "sentence": "Tengo una familia grande.", "translation": "Ich habe eine große Familie." },
+      { "sentence": "Mi familia es importante.", "translation": "Meine Familie ist wichtig." }
+    ]
+  },
+  {
+    "word": "hermano",
+    "translation": "Bruder",
+    "type": "noun",
+    "categories": ["familie"],
+    "gender": "m",
+    "article": "el",
+    "plural": "hermanos",
+    "examples": [
+      { "sentence": "Mi hermano vive aquí.", "translation": "Mein Bruder lebt hier." },
+      { "sentence": "Mi hermano trabaja mucho.", "translation": "Mein Bruder arbeitet viel." },
+      { "sentence": "Mi hermano es simpático.", "translation": "Mein Bruder ist nett." }
+    ]
+  },
+  {
+    "word": "hermana",
+    "translation": "Schwester",
+    "type": "noun",
+    "categories": ["familie"],
+    "gender": "f",
+    "article": "la",
+    "plural": "hermanas",
+    "examples": [
+      { "sentence": "Mi hermana vive aquí.", "translation": "Meine Schwester lebt hier." },
+      { "sentence": "Mi hermana trabaja aquí.", "translation": "Meine Schwester arbeitet hier." },
+      { "sentence": "Mi hermana es amable.", "translation": "Meine Schwester ist freundlich." }
+    ]
+  },
+  {
+    "word": "hijo",
+    "translation": "Sohn",
+    "type": "noun",
+    "categories": ["familie"],
+    "gender": "m",
+    "article": "el",
+    "plural": "hijos",
+    "examples": [
+      { "sentence": "Mi hijo vive aquí.", "translation": "Mein Sohn lebt hier." },
+      { "sentence": "Mi hijo es alto.", "translation": "Mein Sohn ist groß." },
+      { "sentence": "Mi hijo estudia mucho.", "translation": "Mein Sohn lernt viel." }
+    ]
+  },
+  {
+    "word": "hija",
+    "translation": "Tochter",
+    "type": "noun",
+    "categories": ["familie"],
+    "gender": "f",
+    "article": "la",
+    "plural": "hijas",
+    "examples": [
+      { "sentence": "Mi hija vive aquí.", "translation": "Meine Tochter lebt hier." },
+      { "sentence": "Mi hija es alegre.", "translation": "Meine Tochter ist fröhlich." },
+      { "sentence": "Mi hija estudia aquí.", "translation": "Meine Tochter lernt hier." }
+    ]
+  },
+  {
+    "word": "persona",
+    "translation": "Person",
+    "type": "noun",
+    "categories": ["personen"],
+    "gender": "f",
+    "article": "la",
+    "plural": "personas",
+    "examples": [
+      { "sentence": "Es una buena persona.", "translation": "Er/Sie ist ein guter Mensch." },
+      { "sentence": "Conozco a esta persona.", "translation": "Ich kenne diese Person." },
+      { "sentence": "La persona vive aquí.", "translation": "Die Person lebt hier." }
+    ]
+  },
+  {
+    "word": "gente",
+    "translation": "Leute",
+    "type": "noun",
+    "categories": ["personen"],
+    "gender": "f",
+    "article": "la",
+    "plural": null,
+    "examples": [
+      { "sentence": "Hay mucha gente aquí.", "translation": "Hier sind viele Leute." },
+      { "sentence": "La gente es amable.", "translation": "Die Leute sind freundlich." },
+      { "sentence": "Conozco a la gente.", "translation": "Ich kenne die Leute." }
+    ]
+  },
+  {
+    "word": "amiga",
+    "translation": "Freundin",
+    "type": "noun",
+    "categories": ["personen"],
+    "gender": "f",
+    "article": "la",
+    "plural": "amigas",
+    "examples": [
+      { "sentence": "Mi amiga vive aquí.", "translation": "Meine Freundin lebt hier." },
+      { "sentence": "Mi amiga es simpática.", "translation": "Meine Freundin ist nett." },
+      { "sentence": "Hablo con mi amiga.", "translation": "Ich spreche mit meiner Freundin." }
+    ]
+  },
+  {
+    "word": "niño",
+    "translation": "Kind (Junge)",
+    "type": "noun",
+    "categories": ["personen"],
+    "gender": "m",
+    "article": "el",
+    "plural": "niños",
+    "examples": [
+      { "sentence": "El niño vive aquí.", "translation": "Das Kind lebt hier." },
+      { "sentence": "El niño es pequeño.", "translation": "Das Kind ist klein." },
+      { "sentence": "El niño juega aquí.", "translation": "Das Kind spielt hier." }
+    ]
+  },
+  {
+    "word": "niña",
+    "translation": "Kind (Mädchen)",
+    "type": "noun",
+    "categories": ["personen"],
+    "gender": "f",
+    "article": "la",
+    "plural": "niñas",
+    "examples": [
+      { "sentence": "La niña juega aquí.", "translation": "Das Mädchen spielt hier." },
+      { "sentence": "La niña es alegre.", "translation": "Das Mädchen ist fröhlich." },
+      { "sentence": "La niña vive aquí.", "translation": "Das Mädchen lebt hier." }
+    ]
+  },
+  {
+    "word": "hombre",
+    "translation": "Mann",
+    "type": "noun",
+    "categories": ["personen"],
+    "gender": "m",
+    "article": "el",
+    "plural": "hombres",
+    "examples": [
+      { "sentence": "El hombre trabaja aquí.", "translation": "Der Mann arbeitet hier." },
+      { "sentence": "El hombre es alto.", "translation": "Der Mann ist groß." },
+      { "sentence": "El hombre vive aquí.", "translation": "Der Mann lebt hier." }
+    ]
+  },
+  {
+    "word": "mujer",
+    "translation": "Frau",
+    "type": "noun",
+    "categories": ["personen"],
+    "gender": "f",
+    "article": "la",
+    "plural": "mujeres",
+    "examples": [
+      { "sentence": "La mujer trabaja aquí.", "translation": "Die Frau arbeitet hier." },
+      { "sentence": "La mujer es amable.", "translation": "Die Frau ist freundlich." },
+      { "sentence": "La mujer vive aquí.", "translation": "Die Frau lebt hier." }
+    ]
+  },
+  {
+    "word": "persona mayor",
+    "translation": "ältere Person",
+    "type": "noun",
+    "categories": ["personen"],
+    "gender": "f",
+    "article": "la",
+    "plural": "personas mayores",
+    "examples": [
+      { "sentence": "La persona mayor vive aquí.", "translation": "Die ältere Person lebt hier." },
+      { "sentence": "Es una persona mayor.", "translation": "Es ist eine ältere Person." },
+      { "sentence": "Hablo con la persona.", "translation": "Ich spreche mit der Person." }
+    ]
+  },
+
+  {
+    "word": "ser",
+    "translation": "sein",
+    "type": "verb",
+    "categories": ["verben", "grundlage"],
+    "examples": [
+      { "sentence": "Soy estudiante.", "translation": "Ich bin Student." },
+      { "sentence": "Es una casa grande.", "translation": "Es ist ein großes Haus." },
+      { "sentence": "Mi padre es alto.", "translation": "Mein Vater ist groß." }
+    ]
+  },
+  {
+    "word": "estar",
+    "translation": "sein (Zustand)",
+    "type": "verb",
+    "categories": ["verben", "grundlage"],
+    "examples": [
+      { "sentence": "Estoy en casa.", "translation": "Ich bin zu Hause." },
+      { "sentence": "Estoy cansado.", "translation": "Ich bin müde." },
+      { "sentence": "La casa está aquí.", "translation": "Das Haus ist hier." }
+    ]
+  },
+  {
+    "word": "tener",
+    "translation": "haben",
+    "type": "verb",
+    "categories": ["verben", "alltag"],
+    "examples": [
+      { "sentence": "Tengo tiempo.", "translation": "Ich habe Zeit." },
+      { "sentence": "Tengo una familia.", "translation": "Ich habe eine Familie." },
+      { "sentence": "Tengo trabajo.", "translation": "Ich habe Arbeit." }
+    ]
+  },
+  {
+    "word": "ir",
+    "translation": "gehen / fahren",
+    "type": "verb",
+    "categories": ["verben", "bewegung"],
+    "examples": [
+      { "sentence": "Voy a casa.", "translation": "Ich gehe nach Hause." },
+      { "sentence": "Voy al trabajo.", "translation": "Ich gehe zur Arbeit." },
+      { "sentence": "Voy aquí.", "translation": "Ich gehe hierher." }
+    ]
+  },
+  {
+    "word": "venir",
+    "translation": "kommen",
+    "type": "verb",
+    "categories": ["verben", "bewegung"],
+    "examples": [
+      { "sentence": "Vengo de casa.", "translation": "Ich komme von zu Hause." },
+      { "sentence": "Mi amigo viene aquí.", "translation": "Mein Freund kommt hierher." },
+      { "sentence": "Vengo ahora.", "translation": "Ich komme jetzt." }
+    ]
+  },
+  {
+    "word": "vivir",
+    "translation": "leben",
+    "type": "verb",
+    "categories": ["verben", "alltag"],
+    "examples": [
+      { "sentence": "Vivo en Alemania.", "translation": "Ich lebe in Deutschland." },
+      { "sentence": "Vivo aquí.", "translation": "Ich lebe hier." },
+      { "sentence": "Vivo con mi familia.", "translation": "Ich lebe mit meiner Familie." }
+    ]
+  },
+  {
+    "word": "trabajar",
+    "translation": "arbeiten",
+    "type": "verb",
+    "categories": ["verben", "alltag"],
+    "examples": [
+      { "sentence": "Trabajo mucho.", "translation": "Ich arbeite viel." },
+      { "sentence": "Trabajo aquí.", "translation": "Ich arbeite hier." },
+      { "sentence": "Trabajo en casa.", "translation": "Ich arbeite zu Hause." }
+    ]
+  },
+  {
+    "word": "estudiar",
+    "translation": "lernen / studieren",
+    "type": "verb",
+    "categories": ["verben", "alltag"],
+    "examples": [
+      { "sentence": "Estudio español.", "translation": "Ich lerne Spanisch." },
+      { "sentence": "Estudio aquí.", "translation": "Ich lerne hier." },
+      { "sentence": "Mi hijo estudia.", "translation": "Mein Sohn lernt." }
+    ]
+  },
+  {
+    "word": "hablar",
+    "translation": "sprechen",
+    "type": "verb",
+    "categories": ["verben", "kommunikation"],
+    "examples": [
+      { "sentence": "Hablo español.", "translation": "Ich spreche Spanisch." },
+      { "sentence": "Hablo con mi madre.", "translation": "Ich spreche mit meiner Mutter." },
+      { "sentence": "Hablo poco.", "translation": "Ich spreche wenig." }
+    ]
+  },
+  {
+    "word": "decir",
+    "translation": "sagen",
+    "type": "verb",
+    "categories": ["verben", "kommunikation"],
+    "examples": [
+      { "sentence": "Digo la verdad.", "translation": "Ich sage die Wahrheit." },
+      { "sentence": "Digo sí.", "translation": "Ich sage ja." },
+      { "sentence": "Mi amigo dice no.", "translation": "Mein Freund sagt nein." }
+    ]
+  },
+  {
+    "word": "ver",
+    "translation": "sehen",
+    "type": "verb",
+    "categories": ["verben", "wahrnehmung"],
+    "examples": [
+      { "sentence": "Veo la casa.", "translation": "Ich sehe das Haus." },
+      { "sentence": "Veo a mi amigo.", "translation": "Ich sehe meinen Freund." },
+      { "sentence": "Veo esto.", "translation": "Ich sehe das." }
+    ]
+  },
+  {
+    "word": "oír",
+    "translation": "hören",
+    "type": "verb",
+    "categories": ["verben", "wahrnehmung"],
+    "examples": [
+      { "sentence": "Oigo música.", "translation": "Ich höre Musik." },
+      { "sentence": "Oigo tu voz.", "translation": "Ich höre deine Stimme." },
+      { "sentence": "No oigo nada.", "translation": "Ich höre nichts." }
+    ]
+  },
+  {
+    "word": "querer",
+    "translation": "wollen",
+    "type": "verb",
+    "categories": ["verben", "bedarf"],
+    "examples": [
+      { "sentence": "Quiero café.", "translation": "Ich will Kaffee." },
+      { "sentence": "Quiero vivir aquí.", "translation": "Ich will hier leben." },
+      { "sentence": "Quiero hablar español.", "translation": "Ich will Spanisch sprechen." }
+    ]
+  },
+  {
+    "word": "necesitar",
+    "translation": "brauchen",
+    "type": "verb",
+    "categories": ["verben", "bedarf"],
+    "examples": [
+      { "sentence": "Necesito tiempo.", "translation": "Ich brauche Zeit." },
+      { "sentence": "Necesito ayuda.", "translation": "Ich brauche Hilfe." },
+      { "sentence": "Necesito trabajar.", "translation": "Ich muss arbeiten." }
+    ]
+  },
+  {
+    "word": "gustar",
+    "translation": "gefallen",
+    "type": "verb",
+    "categories": ["verben", "empfinden"],
+    "examples": [
+      { "sentence": "Me gusta el café.", "translation": "Ich mag Kaffee." },
+      { "sentence": "Me gusta esta casa.", "translation": "Mir gefällt dieses Haus." },
+      { "sentence": "No me gusta trabajar.", "translation": "Ich mag es nicht zu arbeiten." }
+    ]
+  },
+  {
+    "word": "comer",
+    "translation": "essen",
+    "type": "verb",
+    "categories": ["verben", "alltag"],
+    "examples": [
+      { "sentence": "Como en casa.", "translation": "Ich esse zu Hause." },
+      { "sentence": "Como ahora.", "translation": "Ich esse jetzt." },
+      { "sentence": "Nunca como carne.", "translation": "Ich esse nie Fleisch." }
+    ]
+  },
+  {
+    "word": "beber",
+    "translation": "trinken",
+    "type": "verb",
+    "categories": ["verben", "alltag"],
+    "examples": [
+      { "sentence": "Bebo agua.", "translation": "Ich trinke Wasser." },
+      { "sentence": "Bebo café.", "translation": "Ich trinke Kaffee." },
+      { "sentence": "Nunca bebo alcohol.", "translation": "Ich trinke nie Alkohol." }
+    ]
+  },
+  {
+    "word": "hacer",
+    "translation": "machen",
+    "type": "verb",
+    "categories": ["verben", "alltag"],
+    "examples": [
+      { "sentence": "Hago mi trabajo.", "translation": "Ich mache meine Arbeit." },
+      { "sentence": "Hago esto.", "translation": "Ich mache das." },
+      { "sentence": "Hago poco hoy.", "translation": "Ich mache heute wenig." }
+    ]
+  },
+  {
+    "word": "usar",
+    "translation": "benutzen",
+    "type": "verb",
+    "categories": ["verben", "alltag"],
+    "examples": [
+      { "sentence": "Uso el teléfono.", "translation": "Ich benutze das Telefon." },
+      { "sentence": "Uso esta palabra.", "translation": "Ich benutze dieses Wort." },
+      { "sentence": "Uso español.", "translation": "Ich benutze Spanisch." }
+    ]
+  },
+  {
+    "word": "bueno",
+    "translation": "gut",
+    "type": "adjective",
+    "categories": ["bewertung"],
+    "examples": [
+      { "sentence": "El café es bueno.", "translation": "Der Kaffee ist gut." },
+      { "sentence": "Mi trabajo es bueno.", "translation": "Meine Arbeit ist gut." },
+      { "sentence": "Es una idea buena.", "translation": "Es ist eine gute Idee." }
+    ]
+  },
+  {
+    "word": "malo",
+    "translation": "schlecht",
+    "type": "adjective",
+    "categories": ["bewertung"],
+    "examples": [
+      { "sentence": "El día es malo.", "translation": "Der Tag ist schlecht." },
+      { "sentence": "Es un problema malo.", "translation": "Es ist ein schlechtes Problem." },
+      { "sentence": "El café es malo.", "translation": "Der Kaffee ist schlecht." }
+    ]
+  },
+  {
+    "word": "grande",
+    "translation": "groß",
+    "type": "adjective",
+    "categories": ["beschreibung"],
+    "examples": [
+      { "sentence": "La casa es grande.", "translation": "Das Haus ist groß." },
+      { "sentence": "La ciudad es grande.", "translation": "Die Stadt ist groß." },
+      { "sentence": "Mi familia es grande.", "translation": "Meine Familie ist groß." }
+    ]
+  },
+  {
+    "word": "pequeño",
+    "translation": "klein",
+    "type": "adjective",
+    "categories": ["beschreibung"],
+    "examples": [
+      { "sentence": "La casa es pequeña.", "translation": "Das Haus ist klein." },
+      { "sentence": "Es un problema pequeño.", "translation": "Es ist ein kleines Problem." },
+      { "sentence": "Mi trabajo es pequeño.", "translation": "Meine Arbeit ist klein." }
+    ]
+  },
+  {
+    "word": "nuevo",
+    "translation": "neu",
+    "type": "adjective",
+    "categories": ["beschreibung"],
+    "examples": [
+      { "sentence": "Mi trabajo es nuevo.", "translation": "Meine Arbeit ist neu." },
+      { "sentence": "Es una casa nueva.", "translation": "Es ist ein neues Haus." },
+      { "sentence": "Tengo un móvil nuevo.", "translation": "Ich habe ein neues Handy." }
+    ]
+  },
+  {
+    "word": "viejo",
+    "translation": "alt",
+    "type": "adjective",
+    "categories": ["beschreibung"],
+    "examples": [
+      { "sentence": "La casa es vieja.", "translation": "Das Haus ist alt." },
+      { "sentence": "Es un problema viejo.", "translation": "Es ist ein altes Problem." },
+      { "sentence": "Mi coche es viejo.", "translation": "Mein Auto ist alt." }
+    ]
+  },
+  {
+    "word": "bonito",
+    "translation": "schön",
+    "type": "adjective",
+    "categories": ["beschreibung"],
+    "examples": [
+      { "sentence": "La ciudad es bonita.", "translation": "Die Stadt ist schön." },
+      { "sentence": "Es una casa bonita.", "translation": "Es ist ein schönes Haus." },
+      { "sentence": "Mi amiga es bonita.", "translation": "Meine Freundin ist hübsch." }
+    ]
+  },
+  {
+    "word": "importante",
+    "translation": "wichtig",
+    "type": "adjective",
+    "categories": ["bewertung"],
+    "examples": [
+      { "sentence": "El trabajo es importante.", "translation": "Die Arbeit ist wichtig." },
+      { "sentence": "Mi familia es importante.", "translation": "Meine Familie ist wichtig." },
+      { "sentence": "Es una cosa importante.", "translation": "Es ist eine wichtige Sache." }
+    ]
+  },
+  {
+    "word": "cansado",
+    "translation": "müde",
+    "type": "adjective",
+    "categories": ["gefühle"],
+    "examples": [
+      { "sentence": "Estoy cansado.", "translation": "Ich bin müde." },
+      { "sentence": "Mi padre está cansado.", "translation": "Mein Vater ist müde." },
+      { "sentence": "Estoy muy cansado.", "translation": "Ich bin sehr müde." }
+    ]
+  },
+  {
+    "word": "contento",
+    "translation": "zufrieden",
+    "type": "adjective",
+    "categories": ["gefühle"],
+    "examples": [
+      { "sentence": "Estoy contento.", "translation": "Ich bin zufrieden." },
+      { "sentence": "Mi madre está contenta.", "translation": "Meine Mutter ist zufrieden." },
+      { "sentence": "Estoy muy contento hoy.", "translation": "Ich bin heute sehr zufrieden." }
+    ]
+  },
+  {
+    "word": "triste",
+    "translation": "traurig",
+    "type": "adjective",
+    "categories": ["gefühle"],
+    "examples": [
+      { "sentence": "Estoy triste.", "translation": "Ich bin traurig." },
+      { "sentence": "Mi amigo está triste.", "translation": "Mein Freund ist traurig." },
+      { "sentence": "Hoy estoy triste.", "translation": "Heute bin ich traurig." }
+    ]
+  },
+  {
+    "word": "feliz",
+    "translation": "glücklich",
+    "type": "adjective",
+    "categories": ["gefühle"],
+    "examples": [
+      { "sentence": "Estoy feliz.", "translation": "Ich bin glücklich." },
+      { "sentence": "Mi hija está feliz.", "translation": "Meine Tochter ist glücklich." },
+      { "sentence": "Estoy muy feliz hoy.", "translation": "Ich bin heute sehr glücklich." }
+    ]
+  },
+  {
+    "word": "enfermo",
+    "translation": "krank",
+    "type": "adjective",
+    "categories": ["gefühle"],
+    "examples": [
+      { "sentence": "Estoy enfermo.", "translation": "Ich bin krank." },
+      { "sentence": "Mi hijo está enfermo.", "translation": "Mein Sohn ist krank." },
+      { "sentence": "Hoy estoy enfermo.", "translation": "Heute bin ich krank." }
+    ]
+  },
+  {
+    "word": "sano",
+    "translation": "gesund",
+    "type": "adjective",
+    "categories": ["gefühle"],
+    "examples": [
+      { "sentence": "Estoy sano.", "translation": "Ich bin gesund." },
+      { "sentence": "Mi madre está sana.", "translation": "Meine Mutter ist gesund." },
+      { "sentence": "Es una persona sana.", "translation": "Es ist eine gesunde Person." }
+    ]
+  },
+  {
+    "word": "fácil",
+    "translation": "einfach",
+    "type": "adjective",
+    "categories": ["bewertung"],
+    "examples": [
+      { "sentence": "El trabajo es fácil.", "translation": "Die Arbeit ist einfach." },
+      { "sentence": "Es una pregunta fácil.", "translation": "Es ist eine einfache Frage." },
+      { "sentence": "Este problema es fácil.", "translation": "Dieses Problem ist einfach." }
+    ]
+  },
+  {
+    "word": "difícil",
+    "translation": "schwierig",
+    "type": "adjective",
+    "categories": ["bewertung"],
+    "examples": [
+      { "sentence": "El trabajo es difícil.", "translation": "Die Arbeit ist schwierig." },
+      { "sentence": "Es una pregunta difícil.", "translation": "Es ist eine schwierige Frage." },
+      { "sentence": "Este problema es difícil.", "translation": "Dieses Problem ist schwierig." }
+    ]
+  },
+  {
+    "word": "rápido",
+    "translation": "schnell",
+    "type": "adjective",
+    "categories": ["beschreibung"],
+    "examples": [
+      { "sentence": "El coche es rápido.", "translation": "Das Auto ist schnell." },
+      { "sentence": "Trabajo rápido.", "translation": "Ich arbeite schnell." },
+      { "sentence": "Es una solución rápida.", "translation": "Es ist eine schnelle Lösung." }
+    ]
+  },
+  {
+    "word": "lento",
+    "translation": "langsam",
+    "type": "adjective",
+    "categories": ["beschreibung"],
+    "examples": [
+      { "sentence": "El coche es lento.", "translation": "Das Auto ist langsam." },
+      { "sentence": "Camino lento.", "translation": "Ich gehe langsam." },
+      { "sentence": "Es un proceso lento.", "translation": "Es ist ein langsamer Prozess." }
+    ]
+  },
+  {
+    "word": "ocupado",
+    "translation": "beschäftigt",
+    "type": "adjective",
+    "categories": ["zustand"],
+    "examples": [
+      { "sentence": "Estoy ocupado.", "translation": "Ich bin beschäftigt." },
+      { "sentence": "Mi padre está ocupado.", "translation": "Mein Vater ist beschäftigt." },
+      { "sentence": "Ahora estoy ocupado.", "translation": "Jetzt bin ich beschäftigt." }
+    ]
+  },
+  
+  {
+    "word": "mi",
+    "translation": "mein",
+    "type": "possessive",
+    "categories": ["funktion"],
+    "examples": [
+      { "sentence": "Mi casa es grande.", "translation": "Mein Haus ist groß." },
+      { "sentence": "Mi padre vive aquí.", "translation": "Mein Vater lebt hier." },
+      { "sentence": "Mi trabajo es nuevo.", "translation": "Meine Arbeit ist neu." }
+    ]
+  },
+  {
+    "word": "tu",
+    "translation": "dein",
+    "type": "possessive",
+    "categories": ["funktion"],
+    "examples": [
+      { "sentence": "Tu casa es bonita.", "translation": "Dein Haus ist schön." },
+      { "sentence": "Tu familia vive aquí.", "translation": "Deine Familie lebt hier." },
+      { "sentence": "Tu trabajo es importante.", "translation": "Deine Arbeit ist wichtig." }
+    ]
+  },
+  {
+    "word": "su",
+    "translation": "sein / ihr",
+    "type": "possessive",
+    "categories": ["funktion"],
+    "examples": [
+      { "sentence": "Su casa es grande.", "translation": "Sein/Ihr Haus ist groß." },
+      { "sentence": "Su madre vive aquí.", "translation": "Seine/Ihre Mutter lebt hier." },
+      { "sentence": "Su trabajo es bueno.", "translation": "Seine/Ihre Arbeit ist gut." }
+    ]
+  },
+  {
+    "word": "aquí",
+    "translation": "hier",
+    "type": "adverb",
+    "categories": ["ort"],
+    "examples": [
+      { "sentence": "Vivo aquí.", "translation": "Ich lebe hier." },
+      { "sentence": "Trabajo aquí.", "translation": "Ich arbeite hier." },
+      { "sentence": "Estoy aquí.", "translation": "Ich bin hier." }
+    ]
+  },
+  {
+    "word": "allí",
+    "translation": "dort",
+    "type": "adverb",
+    "categories": ["ort"],
+    "examples": [
+      { "sentence": "Vivo allí.", "translation": "Ich lebe dort." },
+      { "sentence": "Trabajo allí.", "translation": "Ich arbeite dort." },
+      { "sentence": "Está allí.", "translation": "Es ist dort." }
+    ]
+  },
+  {
+    "word": "en",
+    "translation": "in",
+    "type": "preposition",
+    "categories": ["funktion"],
+    "examples": [
+      { "sentence": "Vivo en casa.", "translation": "Ich lebe im Haus." },
+      { "sentence": "Trabajo en la ciudad.", "translation": "Ich arbeite in der Stadt." },
+      { "sentence": "Estoy en casa.", "translation": "Ich bin zu Hause." }
+    ]
+  },
+  {
+    "word": "con",
+    "translation": "mit",
+    "type": "preposition",
+    "categories": ["funktion"],
+    "examples": [
+      { "sentence": "Vivo con mi familia.", "translation": "Ich lebe mit meiner Familie." },
+      { "sentence": "Hablo con mi amigo.", "translation": "Ich spreche mit meinem Freund." },
+      { "sentence": "Trabajo con gente.", "translation": "Ich arbeite mit Leuten." }
+    ]
+  },
+  {
+    "word": "sin",
+    "translation": "ohne",
+    "type": "preposition",
+    "categories": ["funktion"],
+    "examples": [
+      { "sentence": "Trabajo sin pausa.", "translation": "Ich arbeite ohne Pause." },
+      { "sentence": "Vivo sin coche.", "translation": "Ich lebe ohne Auto." },
+      { "sentence": "Café sin azúcar.", "translation": "Kaffee ohne Zucker." }
+    ]
+  },
+  {
+    "word": "de",
+    "translation": "von",
+    "type": "preposition",
+    "categories": ["funktion"],
+    "examples": [
+      { "sentence": "Vengo de casa.", "translation": "Ich komme von zu Hause." },
+      { "sentence": "Es de aquí.", "translation": "Es ist von hier." },
+      { "sentence": "Soy de Alemania.", "translation": "Ich komme aus Deutschland." }
+    ]
+  },
+  {
+    "word": "a",
+    "translation": "zu",
+    "type": "preposition",
+    "categories": ["funktion"],
+    "examples": [
+      { "sentence": "Voy a casa.", "translation": "Ich gehe nach Hause." },
+      { "sentence": "Voy al trabajo.", "translation": "Ich gehe zur Arbeit." },
+      { "sentence": "Hablo a mi madre.", "translation": "Ich spreche mit meiner Mutter." }
+    ]
+  },
+  {
+    "word": "siempre",
+    "translation": "immer",
+    "type": "adverb",
+    "categories": ["häufigkeit"],
+    "examples": [
+      { "sentence": "Siempre trabajo aquí.", "translation": "Ich arbeite immer hier." },
+      { "sentence": "Siempre vivo aquí.", "translation": "Ich lebe immer hier." },
+      { "sentence": "Siempre quiero café.", "translation": "Ich will immer Kaffee." }
+    ]
+  },
+  {
+    "word": "a veces",
+    "translation": "manchmal",
+    "type": "adverb",
+    "categories": ["häufigkeit"],
+    "examples": [
+      { "sentence": "A veces trabajo aquí.", "translation": "Manchmal arbeite ich hier." },
+      { "sentence": "A veces estoy cansado.", "translation": "Manchmal bin ich müde." },
+      { "sentence": "A veces vivo solo.", "translation": "Manchmal lebe ich allein." }
+    ]
+  },
+  {
+    "word": "nunca",
+    "translation": "nie",
+    "type": "adverb",
+    "categories": ["häufigkeit"],
+    "examples": [
+      { "sentence": "Nunca trabajo aquí.", "translation": "Ich arbeite nie hier." },
+      { "sentence": "Nunca como carne.", "translation": "Ich esse nie Fleisch." },
+      { "sentence": "Nunca vivo solo.", "translation": "Ich lebe nie allein." }
+    ]
+  },
+  {
+    "word": "muy",
+    "translation": "sehr",
+    "type": "adverb",
+    "categories": ["intensität"],
+    "examples": [
+      { "sentence": "Estoy muy cansado.", "translation": "Ich bin sehr müde." },
+      { "sentence": "Es muy importante.", "translation": "Es ist sehr wichtig." },
+      { "sentence": "Estoy muy feliz.", "translation": "Ich bin sehr glücklich." }
+    ]
+  },
+  {
+    "word": "mucho",
+    "translation": "viel",
+    "type": "adjective",
+    "categories": ["menge"],
+    "examples": [
+      { "sentence": "Trabajo mucho.", "translation": "Ich arbeite viel." },
+      { "sentence": "Tengo mucho tiempo.", "translation": "Ich habe viel Zeit." },
+      { "sentence": "Mi padre trabaja mucho.", "translation": "Mein Vater arbeitet viel." }
+    ]
+  },
+  {
+    "word": "poco",
+    "translation": "wenig",
+    "type": "adjective",
+    "categories": ["menge"],
+    "examples": [
+      { "sentence": "Trabajo poco.", "translation": "Ich arbeite wenig." },
+      { "sentence": "Hablo poco español.", "translation": "Ich spreche wenig Spanisch." },
+      { "sentence": "Tengo poco tiempo.", "translation": "Ich habe wenig Zeit." }
+    ]
+  },
+  {
+    "word": "ahora",
+    "translation": "jetzt",
+    "type": "adverb",
+    "categories": ["zeit"],
+    "examples": [
+      { "sentence": "Trabajo ahora.", "translation": "Ich arbeite jetzt." },
+      { "sentence": "Quiero comer ahora.", "translation": "Ich will jetzt essen." },
+      { "sentence": "Ahora estoy aquí.", "translation": "Jetzt bin ich hier." }
+    ]
+  },
+  {
+    "word": "hoy",
+    "translation": "heute",
+    "type": "adverb",
+    "categories": ["zeit"],
+    "examples": [
+      { "sentence": "Hoy trabajo aquí.", "translation": "Heute arbeite ich hier." },
+      { "sentence": "Hoy estoy cansado.", "translation": "Heute bin ich müde." },
+      { "sentence": "Hoy quiero café.", "translation": "Heute will ich Kaffee." }
+    ]
+  },
+  {
+    "word": "solo",
+    "translation": "allein",
+    "type": "adjective",
+    "categories": ["zustand"],
+    "examples": [
+      { "sentence": "Vivo solo.", "translation": "Ich lebe allein." },
+      { "sentence": "Trabajo solo.", "translation": "Ich arbeite allein." },
+      { "sentence": "Estoy solo aquí.", "translation": "Ich bin hier allein." }
+    ]
+  }
+
+
+]
